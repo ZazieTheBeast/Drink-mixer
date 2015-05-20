@@ -1,0 +1,63 @@
+USE MIXER;
+
+CREATE TABLE DRINK_LIST(
+	drink_id VARCHAR(25) UNIQUE PRIMARY KEY ,
+	drink_name VARCHAR(120),
+	drink_desc VARCHAR(120)
+);
+INSERT INTO DRINK_LIST (drink_id, drink_name, drink_desc) VALUES(
+'vodka_0', 'Generic Vodka', 'Cheap generic Vodka'
+);
+INSERT INT0 DRINK_LIST (drink_id, drink_name, drink_desc) VALUES(
+'whisky_0' 'Generic Whisky', 'Cheap generis Whisky'
+);
+INSERT INT0 DRINK_LIST (drink_id, drink_name, drink_desc) VALUES(
+'rum_0' 'Generic Rum', 'Cheap generic Rum'
+);
+INSERT INT0 DRINK_LIST (drink_id, drink_name, drink_desc) VALUES(
+'gin_0' 'Generic Whisky', 'Cheap generic Gin'
+);
+CREATE TABLE MIXES(
+	comb_id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+	comb_desc VARCHAR(120),
+	drink_id0 VARCHAR(25),
+	drink_0_amt DECIMAL(6),
+	drink_id1 VARCHAR(25),
+	drink_1_amt DECIMAL(6),
+	drink_id2 VARCHAR(25),
+	drink_2_amt DECIMAL(6),
+	drink_id3 VARCHAR(25),
+	drink_3_amt DECIMAL(6),	
+	drink_id4 VARCHAR(25),
+	drink_4_amt DECIMAL(6),
+	drink_id5 VARCHAR(25),
+	drink_5_amt DECIMAL(6),	
+	drink_id6 VARCHAR(25),
+	drink_6_amt DECIMAL(6),
+	drink_id7 VARCHAR(25),
+	drink_7_amt DECIMAL(6)
+);
+ALTER TABLE MIXES
+ADD CONSTRAINT comb_desc_unique UNIQUE (comb_desc);
+
+-- Straight mixes
+INSERT INTO MIXES (comb_desc, drink_id0, drink_0_amt) 
+VALUES(
+'generic straight vodka', 'vodka_0', '1'
+);
+INSERT INTO MIXES (comb_desc, drink_id0, drink_0_amt)
+VALUES(
+'generic straight whisky', 'whisky_0', '1'
+);
+INSERT INTO MIXES (comb_desc, drink_id0, drink_0_amt)
+VALUES(
+'generic straight rum', 'rum_0', '1'
+);
+INSERT INTO MIXES (comb_desc, drink_id0, drink_0_amt)
+VALUES(
+'generic straight gin', 'gin_0', '1'
+);
+CREATE TABLE PUMP_DRINK(
+	drink_id VARCHAR(25),
+	pump_number INTEGER
+);
