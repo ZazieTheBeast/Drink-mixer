@@ -15,7 +15,7 @@ INSERT INT0 DRINK_LIST (drink_id, drink_name, drink_desc) VALUES(
 'rum_0' 'Generic Rum', 'Cheap generic Rum'
 );
 INSERT INT0 DRINK_LIST (drink_id, drink_name, drink_desc) VALUES(
-'gin_0' 'Generic Whisky', 'Cheap generic Gin'
+'gin_0' 'Generic Gin', 'Cheap generic Gin'
 );
 CREATE TABLE MIXES(
 	comb_id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
